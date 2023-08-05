@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			
+		</style>
+		
+	</head>
+<body>
+	{% for d in de %}
+	<div class="card">
+		<img src="img_avatar.png" alt="Avatar" style="width:100%">
+		<div class="container">
+		  <h4><b>{{d.Uname}}</b></h4>
+		  <p>{{d.email}}</p>
+		</div>
+	  </div>
+	  {% endfor %}
+	
+	<form method ="POST" action="{% url 'save' %}">
+       {% csrf_token %}
+		Username:<br>
+		<input type="text" name="username">
+		<br>
+		Email id:<br>
+		<input type="text" name="email_id">
+		<br><br>
+		<input type="submit" value="Submit">
+		
+	</form>
+</body>
+</html>
